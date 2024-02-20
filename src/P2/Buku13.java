@@ -51,9 +51,9 @@ public class Buku13 {
     int hitungDiskon() {
         double harga = this.harga;
         if (this.harga > 150_000) {
-            harga *= 0.12;
+            harga *= 1 - 0.12;
         } else if (this.harga >= 75_000 && this.harga <= 150_000) {
-            harga *= 0.05;
+            harga *= 1 - 0.05;
         }
         return (int) harga;
     }
