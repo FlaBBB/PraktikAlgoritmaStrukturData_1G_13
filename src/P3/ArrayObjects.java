@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 public class ArrayObjects {
     public static void main(String[] args) {
-        PersegiPanjang[] ppArray = new PersegiPanjang[3];
-
         Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Masukkan jumlah persegi panjang: ");
+        PersegiPanjang[] ppArray = new PersegiPanjang[sc.nextInt()];
         
         for (int i = 0; i < ppArray.length; i++) {
             ppArray[i] = new PersegiPanjang();
