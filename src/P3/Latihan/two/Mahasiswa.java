@@ -26,4 +26,22 @@ public class Mahasiswa {
         System.out.println("Alamat: " + alamat);
         System.out.println("IPK: " + ipk);
     }
+
+    public static double hitungRataRataIPK(Mahasiswa[] mahasiswa) {
+        float totalIPK = 0;
+        for (int i = 0; i < mahasiswa.length; i++) {
+            totalIPK += mahasiswa[i].ipk;
+        }
+        return totalIPK / mahasiswa.length;
+    }
+
+    public static Mahasiswa getMahasiswaIpkTerbesar(Mahasiswa[] mahasiswa) {
+        Mahasiswa mahasiswaIpkTerbesar = mahasiswa[0];
+        for (int i = 1; i < mahasiswa.length; i++) {
+            if (mahasiswa[i].ipk > mahasiswaIpkTerbesar.ipk) {
+                mahasiswaIpkTerbesar = mahasiswa[i];
+            }
+        }
+        return mahasiswaIpkTerbesar;
+    }
 }

@@ -30,5 +30,8 @@ public class Main {
             System.out.printf("Data mahasiswa ke-%d\n", i + 1);
             mahasiswa[i].print();
         }
+        System.out.printf("\nRata-rata IPK: %.2f\n", Mahasiswa.hitungRataRataIPK(mahasiswa));
+        System.out.println("Mahasiswa dengan IPK terbesar:");
+        Mahasiswa.getMahasiswaIpkTerbesar(mahasiswa).print();
     }
 }
