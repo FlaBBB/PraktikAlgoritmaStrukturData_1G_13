@@ -1,4 +1,4 @@
-package P3;
+package P3.ArrayObjects;
 
 public class PersegiPanjang {
     public int panjang;
