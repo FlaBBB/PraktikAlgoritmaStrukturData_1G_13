@@ -15,11 +15,11 @@ public class MainPangkat {
 
         Pangkat[] fk = new Pangkat[iJml];
         for (int i = 0; i < iJml; i++) {
-            fk[i] = new Pangkat();
             System.out.println("Masukkan nilai elemen ke-" + (i + 1) + ": ");
-            fk[i].nilai = sc.nextInt();
+            int iNilai = sc.nextInt();
             System.out.println("Masukkan pangkat elemen ke-" + (i + 1) + ": ");
-            fk[i].pangkat = sc.nextInt();
+            int iPangkat = sc.nextInt();
+            fk[i] = new Pangkat(iNilai, iPangkat);
         }
 
         System.out.println("HASIL- BRUTE FORCE");
