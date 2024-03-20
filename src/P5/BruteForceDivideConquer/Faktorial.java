@@ -12,8 +12,10 @@ public class Faktorial {
 
     public int factorialBF () {
         int fakto = 1;
-        for (int i = 1; i <= nilai; i++) {
-            fakto *= i;
+        int i = 2;
+        while (i  <= nilai) {
+            fakto = fakto * i;
+            i++;
         }
         return fakto;
     }
