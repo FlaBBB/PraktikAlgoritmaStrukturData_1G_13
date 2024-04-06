@@ -54,5 +54,20 @@ public class PencarianBuku13 {
             return null;
         }
     }
+
+    public int FindBinarySearch(int cari, int left, int right) {
+        int mid;
+        if (right >= left) {
+            mid = (left + right) / 2;
+            if (listBk[mid].kodeBuku == cari) {
+                return (mid);
+            } else if (listBk[mid].kodeBuku > cari) {
+                return FindBinarySearch(cari, left, mid - 1);
+            } else {
+                return FindBinarySearch(cari, mid + 1, right);
+            }
+        }
+        return -1;
+    }
 }
 
