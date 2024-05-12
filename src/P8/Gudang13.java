@@ -40,6 +40,7 @@ public class Gudang13 {
         }
 
         System.out.println("Barang " + this.tumpukan[this.top].nama + " diambil dari Gudang.");
+        System.out.println("Kode unik dalam biner: " + konversiDesimalKeBiner(this.tumpukan[this.top].kode));
         
         return this.tumpukan[this.top--];
     }
@@ -63,5 +64,18 @@ public class Gudang13 {
         for (int i = 0; i <= this.top; i++) {
             System.out.printf("Kode %d: %s (Kategory %s)\n", tumpukan[i].kode, tumpukan[i].nama, tumpukan[i].kategori);
         }
+    }
+
+    public String konversiDesimalKeBiner(int kode) {
+        StackKonversi stack = new StackKonversi();
+        while (kode > 0) {
+            stack.push(kode % 2);
+            kode /= 2;
+        }
+        String biner = new String();
+        while (!stack.isEmpty()) {
+            biner += stack.pop();
+        }
+        return biner;
     }
 }   
