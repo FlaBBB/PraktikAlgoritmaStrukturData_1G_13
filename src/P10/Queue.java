@@ -59,7 +59,7 @@ public class Queue {
     public void Enqueue(int dt) {
         if (IsFull()) {
             System.out.println("Queue sudah penuh");
-            return;
+            System.exit(1);
         }
 
         if (IsEmpty()) {
