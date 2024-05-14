@@ -105,4 +105,125 @@ public class SingleLinkedList {
             addFirst(input);
         }
     }
+
+    int getData(int index) {
+        if (isEmpty()) {
+            return -1;
+        }
+
+        if (index < 0) {
+            int length = getLength();
+            index = length + index;
+
+            if (index < 0) {
+                return -1;
+            }
+        }
+
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            if (temp == null) {
+                return -1;
+            }
+            temp = temp.next;
+        }
+        if (temp == null) {
+            return -1;
+        }
+        return temp.data;
+    }
+
+    int indexOf(int key) {
+        Node temp = head;
+        int index = 0;
+        while (temp != null) {
+            if (temp.data == key) {
+                return index;
+            }
+            temp = temp.next;
+            index++;
+        }
+        return -1;
+    }
+
+    void removeFirst() {
+        if (!isEmpty()) {
+            if (head == tail) {
+                head = null;
+                tail = null;
+            } else {
+                head = head.next;
+            }
+        }
+    }
+
+    void removeLast() {
+        if (!isEmpty()) {
+            if (head == tail) {
+                head = null;
+                tail = null;
+            } else {
+                Node temp = head;
+                while (temp.next != tail) {
+                    temp = temp.next;
+                }
+                temp.next = null;
+                tail = temp;
+            }
+        }
+    }
+
+    void remove(int key) {
+        if (!isEmpty()) {
+            if (head.data == key) {
+                removeFirst();
+            } else if (tail.data == key) {
+                removeLast();
+            } else {
+                Node temp = head;
+                while (temp.next != null) {
+                    if (temp.next.data == key) {
+                        temp.next = temp.next.next;
+                        return;
+                    }
+                    temp = temp.next;
+                }
+            }
+        }
+    }
+
+    public void removeAt (int index) {
+        if (!isEmpty()) {
+            if (index < 0) {
+                int length = getLength();
+                index = length + index;
+
+                if (index < 0) {
+                    System.out.println("Indeks melebihi batas");
+                    return;
+                }
+            }
+
+            if (index == 0) {
+                removeFirst();
+            } else {
+                Node temp = head;
+                for (int i = 0; i < index - 1; i++) {
+                    if (temp == null) {
+                        System.out.println("Indeks melebihi batas");
+                        return;
+                    }
+                    temp = temp.next;
+                }
+                if (temp == null || temp.next == null) {
+                    System.out.println("Indeks melebihi batas");
+                    return;
+                }
+                temp.next = temp.next.next;
+                if (temp.next == null) {
+                    tail = temp;
+                }
+            }
+        }
+    }
 }
