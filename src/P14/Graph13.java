@@ -61,4 +61,15 @@ public class Graph13 {
         }
         System.out.println();
     }
+
+
+    public void checkAdjacency(int asal, int tujuan) throws Exception {
+        for (int i = 0; i < list[asal].size(); i++) {
+            if (this.list[asal].get(i) == tujuan) {
+                System.out.println("Gedung " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " bertetangga");
+                return;
+            }
+        }
+        System.out.println("Gedung " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " tidak bertetangga");
+    }
 }
